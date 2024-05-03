@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title></title>
+      <style>
+         #title {
+         text-align: center;
+         }
+         #container {
+         width: 1600px;
+         margin: auto;
+         }
+         #tb {
+         border: 2px solid;
+         margin: auto;
+         }
+         #tb > thead > tr > th {
+         width: 200px;
+         height: 50px;
+         border: 1px solid;
+         text-align: center;
+         background-color: #FFE5B5;
+         font-size:20px;
+         }
+      </style>
+   </head>
+   <body>
+      <h1 id="title">
+         全國休閒農業區旅遊資訊
+      </h1>
+      <div id="container">
+         <table id="tb" >
+            <thead>
+               <tr>
+                  <th>農業區名稱</th>
+                  <th>城市</th>
+                  <th>鄉鎮</th>
+                  <th>地址</th>
+                  <th>電話</th>
+               </tr>
+            </thead>
+         </table>
+      </div>
+      <script src="Scripts/jquery-3.5.1.min.js"></script>
+      <script>
+         $.ajax({
+         type: 'get',
+         url: 'MyData.json',
+         success: function (data) {
+         var item = "";
+         for (var i = 0; i < data.length; i++) {
+         //alert('t');
+         item = "<table style='border: 2px solid;margin: auto;' ><tr>";
+         item += "<td style='width: 200px; height: 50px;text-align:center;background-color:#FFFFBB;'>" + data[i].Name + "</td>";
+         item += "<td style='width: 200px; height: 50px;text-align:center;background-color:#CCDDFF;'>" + data[i].City + "</td>";
+         item += "<td style='width: 200px; height: 50px;text-align:center;background-color:#FFCCCC;'>" + data[i].Town + "</td>";
+         item += "<td style='width: 200px; height: 50px;text-align:center;background-color:#DDDDDD;'>" + data[i].Address + "</td>";
+         item += "<td style='width: 200px; height: 50px;text-align:center;background-color:#BBFFEE;'>" + data[i].Tel + "</td>";
+         item += "</tr></table > ";
+         $('#container').append(item);
+         }
+         },
+         error: function () {
+         $('#title').text('本站目前忙碌中請稍後再試!!');
+         }
+         });
+      </script>
+   </body>
+</html>
