@@ -10,7 +10,7 @@ jQuery-Ajax與JSON資料讀取應用
   
 2. Restful介接讀取練習
 -     介接API url：https://ptx.transportdata.tw/MOTC/v2/Tourism/Restaurant?$format=JSON
-
+-     資料來源：公共運輸整合資訊流通服務平台PTX(https://ptx.transportdata.tw/PTX)
 
 
   ![image](https://github.com/Josephine-M-Li/jQuery-Ajax/assets/77156174/3995e36b-b21d-4067-9341-4ff25445f073)
